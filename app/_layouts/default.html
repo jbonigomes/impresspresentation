@@ -8,14 +8,19 @@
 
     <title>{{ page.title }}</title>
 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
     <!-- build:css({app,.tmp}) /css/main.css -->
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="/_bower_components/impress.js/js/impress.js">
     <link rel="stylesheet" href="/css/main.css">
     <!-- endbuild -->
   </head>
   <body>
-
-    {{ content }}
+  
+    <div id="impress">
+      {{ content }}
+    </div>
 
     <!-- build:js(app) /js/scripts.js -->
     <script src="/js/main.js"></script>
