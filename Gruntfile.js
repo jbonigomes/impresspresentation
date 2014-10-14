@@ -269,6 +269,12 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/_bower_components/open-sans/fonts',
           src: ['**/*'],
           dest: '<%= yeoman.dist %>/fonts'
+        },{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/_bower_components/fontkit-lobster/fonts',
+          src: ['**/*'],
+          dest: '<%= yeoman.dist %>/fonts'
         }]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
