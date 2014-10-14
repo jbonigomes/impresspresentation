@@ -5,6 +5,8 @@
     "impress.js": "~0.5.3",
     "open-sans": "~1.1.0",
     "animate.css": "~3.2.0",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "jquery": "~2.1.1",
+    "fontkit-lobster": "*"
   }
 }
