@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="/_bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="/_bower_components/open-sans/css/open-sans.css">
     <link rel="stylesheet" href="/_bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/_bower_components/fontkit-lobster/styles/lobster.css" />
     <link rel="stylesheet" href="/css/main.css">
     <!-- endbuild -->
   </head>
   <body>
-  
-    <div id="impress">
-      {{ content }}
-    </div>
+
+    {{ content }}
 
     <!-- build:js(app) /js/scripts.js -->
-    <link rel="stylesheet" href="/_bower_components/impress.js/js/impress.js">
+    <script src="/_bower_components/jquery/dist/jquery.js"></script>
+    <script src="/_bower_components/impress.js/js/impress.js"></script>
+    <script src="/js/raphael.js"></script>
     <script src="/js/main.js"></script>
     <!-- endbuild -->
   </body>
