@@ -1,0 +1,15 @@
+.step {
+    padding: 40px;
+    width: 1000px;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }

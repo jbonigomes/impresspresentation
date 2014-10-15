@@ -1,47 +1,27 @@
 
 @import 'reset';
 @import 'base';
+@import 'general';
 
 .snowden {
+  position: absolute;
+
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   opacity: 0;
-  position: absolute;
-  background-size: cover;
-  transition: opacity .5s ease-in-out;
+
   background: url(../img/snowden.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  transition: opacity .5s ease-in-out;
 }
 
-.es-face,
-.gf-face {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  position: absolute;
-  border: 8px solid #fff;
-}
-
-.es-face {
-  right: 0;
-  top: -30px;
-}
-
-.gf-face {
-  top: 90px;
-  right: -50px;
-}
-
-.house {
-  width: 100%;
-  border: 8px solid #fff;
-}
-
-#step-1 {
-  ul {
-    margin: 40px;
-    text-align: right;
+.impress-on-step-3,
+.impress-on-step-4 {
+  .snowden {
+    opacity: .1;
   }
 }
 
@@ -51,18 +31,35 @@
   }
 }
 
-.step {
-    padding: 40px;
-    width: 1000px;
-    margin: 20px auto;
-    position: relative;
-    box-sizing: border-box;
+#step-1 {
+  ul {
+    margin: 40px;
+    text-align: right;
+  }
 }
 
-.impress-enabled .step {
-    margin: 0;
-    opacity: 0;
-    transition: opacity 1s;
-}
+#step-6 {
+  .es-face,
+  .gf-face {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    border: 8px solid #fff;
+  }
 
-.impress-enabled .step.active { opacity: 1 }
+  .es-face {
+    right: -20px;
+    top: 20px;
+  }
+
+  .gf-face {
+    top: 550px;
+    right: -20px;
+  }
+
+  .house {
+    width: 100%;
+    border: 8px solid #fff;
+  }
+}
