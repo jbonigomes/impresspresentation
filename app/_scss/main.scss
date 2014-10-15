@@ -18,16 +18,16 @@
   transition: opacity .5s ease-in-out;
 }
 
+.impress-on-step-2 {
+  .snowden {
+    opacity: 1;
+  }
+}
+
 .impress-on-step-3,
 .impress-on-step-4 {
   .snowden {
     opacity: .1;
-  }
-}
-
-.impress-on-step-2 {
-  .snowden {
-    opacity: 1;
   }
 }
 
@@ -38,6 +38,20 @@
   }
 }
 
+#step-3,
+#step-4 {
+  ul {
+
+    margin: 0 auto;
+
+    li {
+      padding: 30px;
+      font-size: 30px;
+      border-bottom: 1px solid #999;
+    }
+  }
+}
+
 #step-6 {
   .es-face,
   .gf-face {
@@ -45,7 +59,7 @@
     height: 200px;
     border-radius: 50%;
     position: absolute;
-    border: 8px solid #fff;
+    border: 8px solid #ddd;
   }
 
   .es-face {
@@ -60,6 +74,17 @@
 
   .house {
     width: 100%;
-    border: 8px solid #fff;
+    border: 8px solid #ddd;
+    border-radius: 5px;
+  }
+}
+
+#step-7 {
+  .citfour {
+    position: absolute;
+    bottom: 300px;
+    right: -50px;
+    color: #444;
+    font-size: 30px;
   }
 }
