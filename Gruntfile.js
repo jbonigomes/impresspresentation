@@ -296,9 +296,9 @@ module.exports = function (grunt) {
         files: [{
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
-            '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            '<%= yeoman.dist %>/css/**/*.css'
+            // '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            // '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
@@ -370,9 +370,9 @@ module.exports = function (grunt) {
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
+    'clean:server',
+    // 'concurrent:test',
+    // 'connect:test'
   ]);
 
   grunt.registerTask('check', [
@@ -393,8 +393,8 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin',
     'uglify',
-    'imagemin',
-    'svgmin',
+    // 'imagemin',
+    // 'svgmin',
     'filerev',
     'usemin',
     'htmlmin'
@@ -403,9 +403,9 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', [
     'check',
     'test',
-    'build',
-    'buildcontrol'
-  ]);
+    'build'
+    // 'buildcontrol'
+  // ]);
 
   grunt.registerTask('default', [
     'check',
