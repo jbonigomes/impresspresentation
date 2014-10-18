@@ -140,7 +140,8 @@
       animateNumbers($('#step-3 .salary'), 0, 22);
       animateNumbers($('#step-3 .invert'), 9, 0);
       animateNumbers($('#step-3 .month'), 0, 6);
-      animateNumbers($('#step-3 .year'), 0000, 2013);
+      animateNumbers($('#step-3 .yearleft'), 0, 20);
+      animateNumbers($('#step-3 .yearright'), 0, 13);
     }, 100);
   }
 
