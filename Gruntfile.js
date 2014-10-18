@@ -405,7 +405,7 @@ module.exports = function (grunt) {
     'test',
     'build'
     // 'buildcontrol'
-  // ]);
+  ]);
 
   grunt.registerTask('default', [
     'check',
