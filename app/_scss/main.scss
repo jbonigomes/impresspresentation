@@ -3,6 +3,25 @@
 @import 'base';
 @import 'general';
 
+#holder {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+
+  svg {
+    right: 0 !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: auto !important;
+    position: fixed !important;
+    margin-right: -250px !important;
+    margin-bottom: -250px !important;
+    transform: scale(0.15) !important;
+  }
+}
+
 .snowden {
   position: absolute;
 
@@ -46,8 +65,38 @@
 
     li {
       padding: 30px;
-      font-size: 30px;
+      font-size: 60px;
       border-bottom: 1px solid #999;
+      text-align: center;
+
+      i {
+        font-size: 65px;
+        width: 200px;
+      }
+
+      i.fa-birthday-cake {
+        margin-left: -100px;
+      }
+
+      i.fa-text-height {
+        margin-left: -145px;
+      }
+
+      i.fa-calendar {
+        margin-left: -60px;
+      }
+
+      i.fa-flag {
+        margin-left: -260px;
+      }
+
+      i.fa-eye {
+        margin-left: -100px;
+      }
+
+      i.fa-futbol-o {
+        margin-left: -130px;
+      }
     }
   }
 }
@@ -77,6 +126,23 @@
     border: 8px solid #ddd;
     border-radius: 5px;
   }
+
+  .snow,
+  .mills {
+    font-family: 'lobster';
+    position: absolute;
+    font-size: 40px;
+  }
+
+  .snow {
+    top: 100px;
+    right: -160px;
+  }
+
+  .mills {
+    bottom: 100px;
+    right: -245px;
+  }
 }
 
 #step-7 {
@@ -86,5 +152,64 @@
     right: -50px;
     color: #444;
     font-size: 30px;
+  }
+
+  .glenn,
+  .laura {
+    font-family: 'lobster';
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+
+    img {
+      border-radius: 50%;
+      border: 8px solid #ddd;
+    }
+  }
+
+  .glenn {
+    left: 400px;
+  }
+
+  .laura {
+    left: 700px;
+  }
+}
+
+#step-9 {
+  .left,
+  .center,
+  .right {
+    float: left;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .left,
+  .right {
+    width: 45%;
+  }
+
+  .right {
+    padding-top: 110px;
+  }
+
+  .center {
+    width: 10%;
+  }
+
+  .top {
+    margin-bottom: 20px;
+  }
+
+  i {
+    margin-top: 174px;
+    font-size: 80px;
+  }
+}
+
+#step-10 {
+  img {
+    width: 100%;
   }
 }
