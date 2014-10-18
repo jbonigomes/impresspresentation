@@ -1,14 +1,21 @@
 (function() {
 
+  var clockTimeout;
+
   // Raphael clock
-  window.onload = function () {
+  function raphClock() {
+
+    // Clear the html
+    $('#holder').html('');
+
+    // Start clock config
     var r = Raphael("holder", 600, 600),
-        R = 200,
-        init = true,
+        R = 80,
         param = {stroke: "#fff", "stroke-width": 30},
         hash = document.location.hash,
         marksAttr = {fill: hash || "#444", stroke: "none"};
 
+    // Add some attributes
     r.customAttributes.arc = function (value, total, R) {
       var alpha = 360 / total * value,
           a = (90 - alpha) * Math.PI / 180,
@@ -26,86 +33,50 @@
       return {path: path, stroke: color};
     };
 
-    drawMarks(R, 60);
-    var sec = r.path().attr(param).attr({arc: [0, 60, R]});
-    R -= 40;
-    drawMarks(R, 60);
-    var min = r.path().attr(param).attr({arc: [0, 60, R]});
-    R -= 40;
-    drawMarks(R, 12);
-    var hor = r.path().attr(param).attr({arc: [0, 12, R]});
-    R -= 40;
-    drawMarks(R, 31);
-    var day = r.path().attr(param).attr({arc: [0, 31, R]});
-    R -= 40;
-    drawMarks(R, 12);
-    var mon = r.path().attr(param).attr({arc: [0, 12, R]});
-    var pm = r.circle(300, 300, 16).attr({stroke: "none", fill: Raphael.hsb2rgb(15 / 200, 1, .75).hex});
+    // Set the arcs
+    var secs = r.path().attr(param).attr({arc: [0, 60, 80]});
+    var mins = r.path().attr(param).attr({arc: [0, 60, 40]});
 
-    function updateVal(value, total, R, hand, id) {
-      if(total == 31) { // month
-        var d = new Date;
-            d.setDate(1);
-            d.setMonth(d.getMonth() + 1);
-            d.setDate(-1);
-            total = d.getDate();
-      }
-      
-      var color = "hsb(".concat(Math.round(R) / 200, ",", value / total, ", .75)");
-      
-      if(init) {
-        hand.animate({arc: [value, total, R]}, 900, ">");
+    // Dot in the middle
+    r.circle(300, 300, 16).attr({stroke: "none", fill:"#BF5600"});
+
+    // The function that creates the ticking effect
+    function updateVal(value, total, R, hand) {
+      if(value == total) {
+        hand.animate({arc: [value, total, R]}, 750, "bounce", function () {
+          hand.attr({arc: [0, total, R]});
+        });
       } else {
-        if(!value || value == total) {
-          value = total;
-          hand.animate({arc: [value, total, R]}, 750, "bounce", function () {
-            hand.attr({arc: [0, total, R]});
-          });
-        } else {
-          hand.animate({arc: [value, total, R]}, 750, "elastic");
-        }
+        hand.animate({arc: [value, total, R]}, 750, "elastic");
       }
     }
 
-    function drawMarks(R, total) {
-        if (total == 31) { // month
-            var d = new Date;
-            d.setDate(1);
-            d.setMonth(d.getMonth() + 1);
-            d.setDate(-1);
-            total = d.getDate();
-        }
-        var color = "hsb(".concat(Math.round(R) / 200, ", 1, .75)"),
-            out = r.set();
-        for (var value = 0; value < total; value++) {
-            var alpha = 360 / total * value,
-                a = (90 - alpha) * Math.PI / 180,
-                x = 300 + R * Math.cos(a),
-                y = 300 - R * Math.sin(a);
-            out.push(r.circle(x, y, 2).attr(marksAttr));
-        }
-        return out;
-    }
+    // Set the defaults outside the recursive function
+    seconds = 0;
+    minutes = 0;
 
+    // The recursive function
     (function () {
-      var d = new Date,
-          am = (d.getHours() < 12),
-          h = d.getHours() % 12 || 12;
 
-      updateVal(d.getSeconds(), 60, 200, sec, 2);
-      updateVal(d.getMinutes(), 60, 160, min, 1);
-      updateVal(h, 12, 120, hor, 0);
-      updateVal(d.getDate(), 31, 80, day, 3);
-      updateVal(d.getMonth() + 1, 12, 40, mon, 4);
-      pm[(am ? "hide" : "show")]();
-      setTimeout(arguments.callee, 1000);
-      init = false;
+      if(seconds > 60) {
+        seconds = 0;
+        minutes = minutes + 20;
+      }
+
+      if(minutes > 60) {
+        minutes = 0;
+      }
+
+      updateVal(seconds, 60, 80, secs);
+      updateVal(minutes, 60, 40, mins);
+
+      seconds = seconds + 1;
+
+      clockTimeout = setTimeout(arguments.callee, 1000);
+
     })();
-  };
 
-
-  // Inits
-  impress().init();
+  }
 
 
   // animate numbers
@@ -118,6 +89,10 @@
       }
     });
   }
+
+
+  // Start impress.js
+  impress().init();
 
 
   // Steps
@@ -241,6 +216,11 @@
   // Events
   document.addEventListener('impress:stepleave', function(e) {
     switch(e.target.id) {
+      case 'step-1':
+        clearTimeout(clockTimeout);
+        raphClock();
+        break;
+
       case 'step-2':
         animateStep3();
         break;
