@@ -165,6 +165,28 @@
   }
 
 
+  function radarInit() {
+    var radarChartData = {
+      labels: ["Hero","Whistleblower","Citizen","Spied Upon","Theory","Unethical","Public","Vilan","Passive","Fugitive","Spy","Concrete","Ethical","Government"],
+      datasets: [
+        {
+          label: "My Second dataset",
+          fillColor: "rgba(151,187,205,0.2)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [50,100,50,50,50,50,100,50,0,50,50,50,50,0]
+        }
+      ]
+    };
+
+    window.myRadar = new Chart(document.getElementById("overviewRadar").getContext("2d")).Radar(radarChartData, {
+      responsive: true
+    });
+  }
+
   // Start impress.js
   impress().init();
 
@@ -323,6 +345,12 @@
 
       case 'step-16':
         heroBarInit();
+        break;
+
+      case 'step-17':
+        clearTimeout(clockTimeout);
+        raphClock();
+        radarInit();
         break;
     }
   }, false);

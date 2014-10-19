@@ -238,19 +238,6 @@
   }
 }
 
-#step-15{
-  ul {
-
-    margin: 0 auto;
-
-    li {
-      padding: 30px;
-      font-size: 30px;
-      border-bottom: 1px solid #999;
-    }
-  }
-}
-
 #step-13 {
 
   .half {
@@ -265,10 +252,36 @@
   }
 }
 
+#step-15 {
+  ul {
+
+    margin: 0 auto;
+
+    li {
+      padding: 30px;
+      font-size: 30px;
+      border-bottom: 1px solid #999;
+    }
+  }
+}
+
 #step-17 {
   .twothirds {
     width: 90%;
     display: block;
     margin: 0 auto;
+  }
+}
+
+#step-19 {
+  ul {
+
+    margin: 0 auto;
+
+    li {
+      padding: 20px;
+      font-size: 20px;
+      border-bottom: 1px solid #999;
+    }
   }
 }
