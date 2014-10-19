@@ -1,6 +1,8 @@
 (function() {
 
+  // A few GloCals :D
   var clockTimeout;
+  Chart.defaults.global.responsive = true;
 
   // Raphael clock
   function raphClock() {
@@ -87,6 +89,78 @@
       step: function() {
         el.text(Math.ceil(this.animValue));
       }
+    });
+  }
+
+
+  // pie chart data
+  function pieInit() {
+    var pieData = [
+      {
+        value: 55,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Verizon"
+      },
+      {
+        value: 45,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Vodafone"
+      }
+    ];
+
+    var ctx = document.getElementById("phoneperc").getContext("2d");
+    window.myPie = new Chart(ctx).Pie(pieData);
+  }
+
+
+  // Data pie init
+  function dataPieInit() {
+    var pieData = [
+      {
+        value: 98,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Google, Microsoft & Yahoo"
+      },
+      {
+        value: 2,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Other"
+      }
+    ];
+
+    var ctx = document.getElementById("dataperc").getContext("2d");
+    window.myPie = new Chart(ctx).Pie(pieData);
+  }
+
+  // Hero bar init
+  function heroBarInit() {
+    var barChartData = {
+      labels : ["RT","Aljazeera","BBC","Sky News","ITV"],
+      datasets : [
+        {
+          fillColor : "rgba(205,187,151,0.5)",
+          strokeColor : "rgba(205,187,151,0.8)",
+          highlightFill : "rgba(205,187,151,0.75)",
+          highlightStroke : "rgba(205,187,151,1)",
+          data : [100,100,10,10,10]
+        },
+        {
+          fillColor : "rgba(151,187,205,0.5)",
+          strokeColor : "rgba(151,187,205,0.8)",
+          highlightFill : "rgba(151,187,205,0.75)",
+          highlightStroke : "rgba(151,187,205,1)",
+          data : [10,10,100,100,100]
+        }
+      ]
+    }
+
+    var ctx = document.getElementById("herobar").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(barChartData, {
+      responsive : true
     });
   }
 
@@ -235,6 +309,15 @@
 
       case 'step-8':
         animateStep9();
+        break;
+
+      case 'step-12':
+        pieInit();
+        dataPieInit();
+        break;
+
+      case 'step-16':
+        heroBarInit();
         break;
     }
   }, false);
