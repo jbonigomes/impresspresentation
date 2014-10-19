@@ -311,6 +311,11 @@
         animateStep9();
         break;
 
+      case 'step-10':
+        clearTimeout(clockTimeout);
+        raphClock();
+        break;
+
       case 'step-12':
         pieInit();
         dataPieInit();
