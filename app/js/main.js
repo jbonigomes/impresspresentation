@@ -350,9 +350,7 @@
         break;
 
       case 'step-14':
-        setTimeout(function(){
-          heroBarInit();
-        }, 1000);
+        heroBarInit();
         break;
 
       case 'step-15':
