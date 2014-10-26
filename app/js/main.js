@@ -148,17 +148,17 @@
       labels : ["RT","Aljazeera","BBC","Sky News","ITV"],
       datasets : [
         {
-          fillColor : "rgba(205,187,151,0.5)",
-          strokeColor : "rgba(205,187,151,0.8)",
-          highlightFill : "rgba(205,187,151,0.75)",
-          highlightStroke : "rgba(205,187,151,1)",
-          data : [100,100,10,10,10]
-        },
-        {
           fillColor : "rgba(151,187,205,0.5)",
           strokeColor : "rgba(151,187,205,0.8)",
           highlightFill : "rgba(151,187,205,0.75)",
           highlightStroke : "rgba(151,187,205,1)",
+          data : [100,100,10,10,10]
+        },
+        {
+          fillColor : "rgba(205,10,10,0.5)",
+          strokeColor : "rgba(205,10,10,0.8)",
+          highlightFill : "rgba(205,10,10,0.75)",
+          highlightStroke : "rgba(205,10,10,1)",
           data : [10,10,100,100,100]
         }
       ]
