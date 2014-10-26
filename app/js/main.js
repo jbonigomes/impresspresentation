@@ -343,11 +343,11 @@
         dataPieInit();
         break;
 
-      case 'step-16':
+      case 'step-15':
         heroBarInit();
         break;
 
-      case 'step-17':
+      case 'step-16':
         clearTimeout(clockTimeout);
         raphClock();
         radarInit();
