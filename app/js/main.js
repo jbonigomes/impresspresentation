@@ -100,13 +100,17 @@
         value: 55,
         color:"#F7464A",
         highlight: "#FF5A5E",
-        label: "Verizon"
+        label: "Verizon",
+        labelColor: "white",
+        labelFontSize: "20"
       },
       {
         value: 45,
         color: "#46BFBD",
         highlight: "#5AD3D1",
-        label: "Vodafone"
+        label: "Vodafone",
+        labelColor: "white",
+        labelFontSize: "20"
       }
     ];
 
@@ -122,7 +126,9 @@
         value: 98,
         color:"#F7464A",
         highlight: "#FF5A5E",
-        label: "Google, Microsoft & Yahoo"
+        label: "Google, Microsoft & Yahoo",
+        labelColor: "white",
+        labelFontSize: "20"
       },
       {
         value: 2,
