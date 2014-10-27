@@ -345,18 +345,30 @@
         break;
 
       case 'step-12':
+        clearTimeout(clockTimeout);
+        raphClock();
+        break;
+
+      case 'step-14':
         pieInit();
         dataPieInit();
         break;
 
-      case 'step-14':
+      case 'step-16':
         heroBarInit();
         break;
 
-      case 'step-15':
+      case 'step-17':
         clearTimeout(clockTimeout);
         raphClock();
         radarInit();
+        break;
+
+      case 'step-1':
+      case 'step-18':
+      case 'step-19':
+        clearTimeout(clockTimeout);
+        raphClock();
         break;
     }
   }, false);

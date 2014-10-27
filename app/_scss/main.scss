@@ -214,9 +214,31 @@
   }
 }
 
-#step-11,
-#step-12,
-#step-14 {
+#step-11 {
+  text-align: center;
+
+  img {
+    margin: 30px 70px;
+    width: auto;
+    height: 250px;
+  }
+
+  img.bigger {
+    height: 280px;
+  }
+}
+
+#step-12 {
+  text-align: center;
+
+  img {
+    margin-top: 30px;
+  }
+}
+
+#step-13,
+#step-14,
+#step-16 {
   ul {
 
     margin: 0 auto;
@@ -244,7 +266,7 @@
   }
 }
 
-#step-13 {
+#step-15 {
 
   .half {
     width: 50%;
@@ -258,8 +280,8 @@
   }
 }
 
-#step-15,
-#step-16 {
+#step-17,
+#step-18 {
   .twothirds {
     width: 60%;
     display: block;
@@ -267,13 +289,13 @@
   }
 }
 
-#step-17 {
+#step-19 {
   ul {
 
     margin: 0 auto;
 
     li {
-      padding: 20px;
+      padding: 10px;
       font-size: 18px;
       border-bottom: 1px solid #999;
     }
