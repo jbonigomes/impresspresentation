@@ -93,34 +93,8 @@
   }
 
 
-  // pie chart data
-  function pieInit() {
-    var pieData = [
-      {
-        value: 55,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Verizon",
-        labelColor: "white",
-        labelFontSize: "20"
-      },
-      {
-        value: 45,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Vodafone",
-        labelColor: "white",
-        labelFontSize: "20"
-      }
-    ];
-
-    var ctx = document.getElementById("phoneperc").getContext("2d");
-    window.myPie = new Chart(ctx).Pie(pieData);
-  }
-
-
   // Data pie init
-  function dataPieInit() {
+  function pieInit() {
     var pieData = [
       {
         value: 98,
@@ -141,6 +115,7 @@
     var ctx = document.getElementById("dataperc").getContext("2d");
     window.myPie = new Chart(ctx).Pie(pieData);
   }
+
 
   // Hero bar init
   function heroBarInit() {
@@ -351,7 +326,6 @@
 
       case 'step-14':
         pieInit();
-        dataPieInit();
         break;
 
       case 'step-16':
